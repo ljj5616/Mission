@@ -1,0 +1,37 @@
+package umc.spring.domain.mapping;
+
+import jakarta.persistence.*;
+import lombok.*;
+import umc.spring.domain.Member;
+import umc.spring.domain.Mission;
+import umc.spring.domain.base.BaseEntity;
+import umc.spring.domain.enums.MissionStatus;
+
+import java.util.ArrayList;
+import java.util.List;
+
+@Entity
+@Getter
+@Builder
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
+@AllArgsConstructor
+public class MemberMission extends BaseEntity {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @Enumerated
+    @Column(columnDefinition = "VARCHAR(15) DEFAULT 'CHALLENGING'")
+    private MissionStatus missionStatus;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "member.id")
+    private Member member;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "mission.id")
+    private Mission mission;
+
+
+}
