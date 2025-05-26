@@ -11,7 +11,7 @@ import umc.spring.validation.annotation.ExistStore;
 
 @Getter
 @NoArgsConstructor
-public class ReviewRequestDTO {
+public class AddReviewDTO {
 
     @NotBlank
     private String content;

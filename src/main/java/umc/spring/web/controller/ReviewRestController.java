@@ -5,7 +5,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 import umc.spring.apiPayload.ApiResponse;
 import umc.spring.service.ReviewService.ReviewCommandService;
-import umc.spring.web.dto.ReviewRequestDTO;
+import umc.spring.web.dto.AddReviewDTO;
 
 @RestController
 @RequiredArgsConstructor
@@ -17,7 +17,7 @@ public class ReviewRestController {
 
     @PostMapping("/{storeId}/my-reviews")
     public ApiResponse<Long> writeReview(@PathVariable("storeId") Long storeId,
-                                         @RequestBody @Valid ReviewRequestDTO request) {
+                                         @RequestBody @Valid AddReviewDTO request) {
         Long reviewId = reviewCommandService.writeReview(storeId, request);
         return ApiResponse.onSuccess(reviewId);
     }

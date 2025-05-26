@@ -10,7 +10,7 @@ import umc.spring.domain.Store;
 import umc.spring.repository.MemberRepository;
 import umc.spring.repository.ReviewRepository;
 import umc.spring.repository.StoreRepository.StoreRepository;
-import umc.spring.web.dto.ReviewRequestDTO;
+import umc.spring.web.dto.AddReviewDTO;
 
 @Service
 @RequiredArgsConstructor
@@ -22,7 +22,7 @@ public class ReviewCommandServiceImpl implements ReviewCommandService {
     private final MemberRepository memberRepository;
 
     @Override
-    public Long writeReview(Long storeId, ReviewRequestDTO request) {
+    public Long writeReview(Long storeId, AddReviewDTO request) {
         Store store = storeRepository.findById(storeId)
                 .orElseThrow(() -> new IllegalArgumentException("존재하지 않는 가게입니다."));
 
