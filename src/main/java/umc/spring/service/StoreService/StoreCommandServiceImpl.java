@@ -8,7 +8,7 @@ import umc.spring.domain.Region;
 import umc.spring.domain.Store;
 import umc.spring.repository.RegionRepository;
 import umc.spring.repository.StoreRepository.StoreRepository;
-import umc.spring.web.dto.StoreRequestDTO;
+import umc.spring.web.dto.StoreRegionDTO;
 
 @Service
 @RequiredArgsConstructor
@@ -19,7 +19,7 @@ public class StoreCommandServiceImpl implements StoreCommandService {
     private final RegionRepository regionRepository;
 
     @Override
-    public Long registerStore(StoreRequestDTO request) {
+    public Long registerStore(StoreRegionDTO request) {
         Region region = regionRepository.findById(request.getRegionId())
                 .orElseThrow(() -> new IllegalArgumentException("존재하지 않는 지역입니다."));
 

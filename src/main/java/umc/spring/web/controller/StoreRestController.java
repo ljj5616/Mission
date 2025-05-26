@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import umc.spring.apiPayload.ApiResponse;
 import umc.spring.service.StoreService.StoreCommandService;
-import umc.spring.web.dto.StoreRequestDTO;
+import umc.spring.web.dto.StoreRegionDTO;
 
 @RestController
 @RequestMapping("/stores")
@@ -19,7 +19,7 @@ public class StoreRestController {
     private final StoreCommandService storeCommandService;
 
     @PostMapping
-    public ApiResponse<Long> registerStore(@RequestBody @Valid StoreRequestDTO request) {
+    public ApiResponse<Long> registerStore(@RequestBody @Valid StoreRegionDTO request) {
         Long storeId = storeCommandService.registerStore(request);
         return ApiResponse.onSuccess(storeId);
     }
