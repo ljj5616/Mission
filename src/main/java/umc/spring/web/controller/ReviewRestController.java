@@ -11,6 +11,7 @@ import umc.spring.web.dto.ReviewRequestDTO;
 @RequiredArgsConstructor
 @RequestMapping("/store")
 public class ReviewRestController {
+    //add feature/#2-review
 
     private final ReviewCommandService reviewCommandService;
 
