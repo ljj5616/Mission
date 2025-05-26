@@ -8,7 +8,7 @@ import umc.spring.domain.Mission;
 import umc.spring.domain.Store;
 import umc.spring.repository.MissionRepository;
 import umc.spring.repository.StoreRepository.StoreRepository;
-import umc.spring.web.dto.MissionRequestDTO;
+import umc.spring.web.dto.AddMissionDTO;
 
 @Service
 @RequiredArgsConstructor
@@ -19,7 +19,7 @@ public class MissionCommandServiceImpl implements MissionCommandService {
     private final StoreRepository storeRepository;
 
     @Override
-    public Long createMission(Long storeId, MissionRequestDTO request) {
+    public Long createMission(Long storeId, AddMissionDTO request) {
         Store store = storeRepository.findById(storeId)
                 .orElseThrow(() -> new IllegalArgumentException("해당 가게가 존재하지 않습니다."));
 

@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.*;
 import umc.spring.apiPayload.ApiResponse;
 import umc.spring.service.MissionService.MissionCommandService;
 import umc.spring.validation.annotation.ExistStore;
-import umc.spring.web.dto.MissionRequestDTO;
+import umc.spring.web.dto.AddMissionDTO;
 
 @RestController
 @RequiredArgsConstructor
@@ -17,7 +17,7 @@ public class MissionRestController {
 
     @PostMapping("/{storeId}/missions")
     public ApiResponse<Long> addMission(@PathVariable("storeId") @ExistStore Long storeId,
-                                        @RequestBody @Valid MissionRequestDTO request) {
+                                        @RequestBody @Valid AddMissionDTO request) {
         Long id = missionCommandService.createMission(storeId, request);
         return ApiResponse.onSuccess(id);
     }

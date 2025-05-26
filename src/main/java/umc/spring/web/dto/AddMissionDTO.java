@@ -7,7 +7,7 @@ import java.time.LocalDate;
 
 @Getter
 @NoArgsConstructor
-public class MissionRequestDTO {
+public class AddMissionDTO {
 
     private Integer reward;
     private LocalDate deadline;
