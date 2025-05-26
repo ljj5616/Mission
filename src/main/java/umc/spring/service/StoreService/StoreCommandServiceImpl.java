@@ -3,7 +3,7 @@ package umc.spring.service.StoreService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import umc.spring.converter.StoreConverter;
+import umc.spring.converter.StoreRegionConverter;
 import umc.spring.domain.Region;
 import umc.spring.domain.Store;
 import umc.spring.repository.RegionRepository;
@@ -23,7 +23,7 @@ public class StoreCommandServiceImpl implements StoreCommandService {
         Region region = regionRepository.findById(request.getRegionId())
                 .orElseThrow(() -> new IllegalArgumentException("존재하지 않는 지역입니다."));
 
-        Store store = StoreConverter.toEntity(request, region);
+        Store store = StoreRegionConverter.toEntity(request, region);
 
         return storeRepository.save(store).getId();
     }
