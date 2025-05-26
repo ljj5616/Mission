@@ -1,5 +1,6 @@
 package umc.spring.web.controller;
 
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 import umc.spring.apiPayload.ApiResponse;
@@ -14,7 +15,7 @@ public class MemberMissionController {
 
     @PostMapping("/{missionId}/challenge")
     public ApiResponse<Long> challengeMission(@PathVariable("missionId") Long missionId,
-                                              @RequestBody MissionChallengeRequestDTO request) {
+                                              @RequestBody @Valid MissionChallengeRequestDTO request) {
         Long id = memberMissionCommandService.challengeMission(missionId, request.getMemberId());
         return ApiResponse.onSuccess(id);
     }
