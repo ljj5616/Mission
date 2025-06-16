@@ -14,7 +14,7 @@ public class MemberExistValidator implements ConstraintValidator<ExistMember, Lo
     private final MemberRepository memberRepository;
 
     @Override
-    public boolean isValid(Long value, ConstraintValidatorContext constraintValidatorContext) {
+    public boolean isValid(Long value, ConstraintValidatorContext context){
         if (value == null) return false;
         return memberRepository.existsById(value);
     }
