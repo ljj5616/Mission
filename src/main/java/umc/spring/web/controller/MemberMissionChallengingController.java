@@ -19,7 +19,7 @@ import umc.spring.service.memberMissionService.MemberMissionService;
 @RequestMapping("/members")
 @Validated
 @Slf4j
-public class MemberMissionController {
+public class MemberMissionChallengingController {
 
     private final MemberMissionService memberMissionService;
 
