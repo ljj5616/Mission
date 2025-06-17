@@ -1,4 +1,4 @@
-package umc.spring.service.ReviewService;
+package umc.spring.service.reviewService;
 
 import umc.spring.web.dto.AddReviewDTO;
 
