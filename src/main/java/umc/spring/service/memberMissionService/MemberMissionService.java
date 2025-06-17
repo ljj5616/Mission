@@ -7,4 +7,5 @@ public interface MemberMissionService {
 
     Page<MemberMission> ChallengingMissions(Long memberId, Integer page);
 
+    void completeMission(Long memberId, Long missionId);
 }

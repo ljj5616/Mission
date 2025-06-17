@@ -7,7 +7,10 @@ import umc.spring.domain.Member;
 import umc.spring.domain.enums.MissionStatus;
 import umc.spring.domain.mapping.MemberMission;
 
+import java.util.Optional;
+
 public interface MemberMissionRepository extends JpaRepository<MemberMission, Long> {
+    Optional<MemberMission> findByMemberIdAndMissionId(Long memberId, Long missionId);
 
     Page<MemberMission> findAllByMemberAndMissionStatus(Member member, MissionStatus status, Pageable pageable);
 
