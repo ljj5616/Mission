@@ -1,4 +1,4 @@
-package umc.spring.service.ReviewService;
+package umc.spring.service.reviewService;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -9,7 +9,7 @@ import umc.spring.domain.Review;
 import umc.spring.domain.Store;
 import umc.spring.repository.MemberRepository;
 import umc.spring.repository.ReviewRepository;
-import umc.spring.repository.StoreRepository.StoreRepository;
+import umc.spring.repository.storeRepository.StoreRepository;
 import umc.spring.web.dto.AddReviewDTO;
 
 @Service

@@ -1,10 +1,14 @@
 package umc.spring.converter;
 
-<<<<<<< HEAD
+import org.springframework.data.domain.Page;
 import umc.spring.domain.Member;
 import umc.spring.domain.Mission;
 import umc.spring.domain.enums.MissionStatus;
 import umc.spring.domain.mapping.MemberMission;
+import umc.spring.web.dto.MemberMissionDTO;
+
+import java.util.List;
+import java.util.stream.Collectors;
 
 public class MemberMissionConverter {
 
@@ -13,16 +17,8 @@ public class MemberMissionConverter {
                 .member(member)
                 .mission(mission)
                 .missionStatus(MissionStatus.CHALLENGING)
-=======
-import org.springframework.data.domain.Page;
-import umc.spring.domain.Mission;
-import umc.spring.domain.mapping.MemberMission;
-import umc.spring.web.dto.MemberMissionDTO;
-
-import java.util.List;
-import java.util.stream.Collectors;
-
-public class MemberMissionConverter {
+                .build();
+    }
 
     public static MemberMissionDTO.ChallengingMissionDTO toChallengingMissionDTO(MemberMission memberMission) {
         Mission mission = memberMission.getMission();
@@ -47,7 +43,6 @@ public class MemberMissionConverter {
                 .totalElements(missions.getTotalElements())
                 .isFirst(missions.isFirst())
                 .isLast(missions.isLast())
->>>>>>> feature/#8-get-challenging-mission-list
                 .build();
     }
 }

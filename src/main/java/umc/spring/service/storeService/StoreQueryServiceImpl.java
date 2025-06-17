@@ -8,7 +8,7 @@ import org.springframework.transaction.annotation.Transactional;
 import umc.spring.domain.Review;
 import umc.spring.domain.Store;
 import umc.spring.repository.ReviewRepository;
-import umc.spring.repository.StoreRepository.StoreRepository;
+import umc.spring.repository.storeRepository.StoreRepository;
 
 import java.util.List;
 import java.util.Optional;
@@ -28,11 +28,11 @@ public class StoreQueryServiceImpl implements StoreQueryService {
 
     @Override
     public List<Store> findStoresByNameAndScore(String name, Float score) {
-        List<Store> filterdStores = storeRepository.dynamicQueryWithBooleanBuilder(name, score);
+        List<Store> filteredStores = storeRepository.dynamicQueryWithBooleanBuilder(name, score);
 
-        filterdStores.forEach(store -> System.out.println("Store: " + store));
+        filteredStores.forEach(store -> System.out.println("Store: " + store));
 
-        return filterdStores;
+        return filteredStores;
     }
 
     @Override

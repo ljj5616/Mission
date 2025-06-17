@@ -1,17 +1,15 @@
 package umc.spring.service.storeService;
 
-import jakarta.persistence.criteria.CriteriaBuilder;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
-import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import umc.spring.apiPayload.code.status.ErrorStatus;
 import umc.spring.apiPayload.exception.handler.StoreHandler;
 import umc.spring.domain.Mission;
 import umc.spring.domain.Store;
 import umc.spring.repository.MissionRepository;
-import umc.spring.repository.StoreRepository.StoreRepository;
+import umc.spring.repository.storeRepository.StoreRepository;
 
 @Service
 @RequiredArgsConstructor

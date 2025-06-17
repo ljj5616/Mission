@@ -4,7 +4,7 @@ import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 import umc.spring.apiPayload.ApiResponse;
-import umc.spring.service.MemberMissionService.MemberMissionCommandService;
+import umc.spring.service.memberMissionService.MemberMissionCommandService;
 import umc.spring.web.dto.MissionChallengeRequestDTO;
 
 @RestController
