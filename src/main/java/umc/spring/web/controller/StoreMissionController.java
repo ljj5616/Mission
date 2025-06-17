@@ -12,9 +12,9 @@ import org.springframework.data.domain.Page;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import umc.spring.apiPayload.ApiResponse;
-import umc.spring.converter.StoreConverter;
+import umc.spring.converter.StoreMissionConverter;
 import umc.spring.domain.Mission;
-import umc.spring.service.StoreService.StoreMissionQueryService;
+import umc.spring.service.storeService.StoreMissionQueryService;
 import umc.spring.validation.annotation.CheckPage;
 import umc.spring.web.dto.StoreMissionDTO;
 
@@ -43,6 +43,6 @@ public class StoreMissionController {
     public ApiResponse<StoreMissionDTO.MissionListDTO> getMissionsByStore(@PathVariable(name = "storeId") Long storeId, @CheckPage @RequestParam(name = "page") Integer page) {
         log.info("page={}", page);
         Page<Mission> missionList = storeMissionQueryService.getMissionsByStore(storeId, page);
-        return ApiResponse.onSuccess(StoreConverter.toMissionListDTO(missionList));
+        return ApiResponse.onSuccess(StoreMissionConverter.toMissionListDTO(missionList));
     }
 }

@@ -7,7 +7,7 @@ import umc.spring.web.dto.StoreMissionDTO;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class StoreConverter {
+public class StoreMissionConverter {
 
     public static StoreMissionDTO.MissionDTO toMissionDTO(Mission mission) {
         return StoreMissionDTO.MissionDTO.builder()
@@ -20,7 +20,7 @@ public class StoreConverter {
 
     public static StoreMissionDTO.MissionListDTO toMissionListDTO(Page<Mission> missions) {
         List<StoreMissionDTO.MissionDTO> missionDTOList = missions.stream()
-                .map(StoreConverter::toMissionDTO)
+                .map(StoreMissionConverter::toMissionDTO)
                 .collect(Collectors.toList());
 
         return StoreMissionDTO.MissionListDTO.builder()
