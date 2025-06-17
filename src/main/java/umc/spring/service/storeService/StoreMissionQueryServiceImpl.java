@@ -1,4 +1,4 @@
-package umc.spring.service.StoreService;
+package umc.spring.service.storeService;
 
 import jakarta.persistence.criteria.CriteriaBuilder;
 import lombok.RequiredArgsConstructor;
