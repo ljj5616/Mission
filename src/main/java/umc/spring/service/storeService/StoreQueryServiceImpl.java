@@ -22,10 +22,10 @@ public class StoreQueryServiceImpl implements StoreQueryService {
 
     @Override
     public List<Store> findStoresByNameAndScore(String name, Float score) {
-        List<Store> filterdStores = storeRepository.dynamicQueryWithBooleanBuilder(name, score);
+        List<Store> filteredStores = storeRepository.dynamicQueryWithBooleanBuilder(name, score);
 
-        filterdStores.forEach(store -> System.out.println("Store: " + store));
+        filteredStores.forEach(store -> System.out.println("Store: " + store));
 
-        return filterdStores;
+        return filteredStores;
     }
 }
