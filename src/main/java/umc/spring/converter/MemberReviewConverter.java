@@ -7,7 +7,7 @@ import umc.spring.web.dto.MemberResponseDTO;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class MemberConverter {
+public class MemberReviewConverter {
 
     public static MemberResponseDTO.MyReviewDTO toMyReviewDTO(Review review) {
         return MemberResponseDTO.MyReviewDTO.builder()
@@ -21,7 +21,7 @@ public class MemberConverter {
 
     public static MemberResponseDTO.MyReviewListDTO toMyReviewListDTO(Page<Review> reviewPage) {
         List<MemberResponseDTO.MyReviewDTO> reviewDTOList = reviewPage.stream()
-                .map(MemberConverter::toMyReviewDTO)
+                .map(MemberReviewConverter::toMyReviewDTO)
                 .collect(Collectors.toList());
 
         return MemberResponseDTO.MyReviewListDTO.builder()

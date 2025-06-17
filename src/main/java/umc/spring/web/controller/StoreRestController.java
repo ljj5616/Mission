@@ -11,9 +11,9 @@ import org.springframework.data.domain.Page;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import umc.spring.apiPayload.ApiResponse;
-import umc.spring.converter.StoreConverter;
+import umc.spring.converter.StoreReviewConverter;
 import umc.spring.domain.Review;
-import umc.spring.service.StoreService.StoreQueryService;
+import umc.spring.service.storeService.StoreQueryService;
 import umc.spring.validation.annotation.ExistStore;
 import umc.spring.web.dto.StoreResponseDTO;
 
@@ -39,7 +39,7 @@ public class StoreRestController {
 
     public ApiResponse<StoreResponseDTO.ReviewPreViewListDTO> getReviewList(@ExistStore @PathVariable(name = "storeId") Long storeId, @RequestParam(name = "page") Integer page) {
         Page<Review> reviewList = storeQueryService.getReviewList(storeId, page);
-        return ApiResponse.onSuccess(StoreConverter.reviewPreViewListDTO(reviewList));
+        return ApiResponse.onSuccess(StoreReviewConverter.reviewPreViewListDTO(reviewList));
     }
 
 

@@ -7,7 +7,7 @@ import umc.spring.web.dto.StoreResponseDTO;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class StoreConverter {
+public class StoreReviewConverter {
 
     public static StoreResponseDTO.ReviewPreViewDTO reviewPreViewDTO(Review review) {
         return StoreResponseDTO.ReviewPreViewDTO.builder()
@@ -20,7 +20,7 @@ public class StoreConverter {
 
     public static StoreResponseDTO.ReviewPreViewListDTO reviewPreViewListDTO(Page<Review> reviewList) {
         List<StoreResponseDTO.ReviewPreViewDTO> reviewPreViewDTOList = reviewList.stream()
-                .map(StoreConverter::reviewPreViewDTO).collect(Collectors.toList());
+                .map(StoreReviewConverter::reviewPreViewDTO).collect(Collectors.toList());
 
         return StoreResponseDTO.ReviewPreViewListDTO.builder()
                 .isLast(reviewList.isLast())
