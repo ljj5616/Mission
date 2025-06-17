@@ -4,7 +4,7 @@ import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 import umc.spring.apiPayload.ApiResponse;
-import umc.spring.service.MissionService.MissionCommandService;
+import umc.spring.service.missionService.MissionCommandService;
 import umc.spring.validation.annotation.ExistStore;
 import umc.spring.web.dto.AddMissionDTO;
 
