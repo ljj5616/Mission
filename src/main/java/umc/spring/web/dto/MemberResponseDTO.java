@@ -15,7 +15,7 @@ public class MemberResponseDTO {
     @Getter
     @NoArgsConstructor
     @AllArgsConstructor
-    public static class JoinResultDTO{
+    public static class JoinResultDTO {
         Long memberId;
         LocalDateTime createdAt;
     }
@@ -43,5 +43,24 @@ public class MemberResponseDTO {
         Float score;
         String body;
         LocalDateTime createdAt;
+    }
+
+    @Builder
+    @Getter
+    @NoArgsConstructor
+    @AllArgsConstructor
+    public static class LoginResultDTO {
+        Long memberId;
+        String accessToken;
+    }
+
+    @Builder
+    @Getter
+    @NoArgsConstructor
+    @AllArgsConstructor
+    public static class MemberInfoDTO {
+        String name;
+        String email;
+        String gender;
     }
 }
